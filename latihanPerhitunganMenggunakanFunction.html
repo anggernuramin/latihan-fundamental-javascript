@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan menghitung</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrapper-gajian {
+      background-color: #eaeaea;
+      width: 400px;
+      margin: 120px auto;
+      padding: 20px;
+    }
+
+    input,
+    label,
+    select {
+      width: 70%;
+      margin: 10px 10px 10px 0;
+      display: block;
+    }
+
+    h4 {
+      margin-top: -10px;
+    }
+  </style>
+</head>
+<div class="wrapper-gajian">
+
+
+  <label for="namaKaryawan">Nama Karyawan : </label>
+  <input type="text" id="namaKaryawan" name="nama Karyawan" placeholder="Nama anda">
+  <label for="Jabatan">Pilih Jabatan : </label>
+  <select name="" id="Jabatan">
+    <option value="">Jabatan</option>
+    <option value="Staf Admin">Staf Admin</option>
+    <option value="Hr Specialist">Hr Specialist</option>
+    <option value="Sraf Marketing">Sraf Marketing</option>
+    <option value="Get Staf">Get Staf</option>
+    <option value="IT Support">IT Support</option>
+  </select>
+  <label for="gaji">Gaji perhari : </label>
+  <input type="number" id="gaji" name="gaji" placeholder=".000">
+  <label for="masuk-kerja">Jumlah masuk kerja : </label>
+  <input type="number" id="masuk-kerja" name="masuk-kerja" placeholder="Angka 1 - 30">
+  <button type="button" id="total">Total Gaji</button>
+  <label for="keterangan">Keterangan : </label>
+  <h4 id="keterangan"></h4>
+</div>
+
+<body>
+  <script>
+    // 1. Menghitung luas lingkaran menggunakan function dexlaration
+    function luasLingkaran(pi, jari) {
+      if (pi === 3.14) {
+        return pi * jari * jari;
+      } else if (pi === 22 / 7) {
+        return pi * jari * jari
+      }
+      alert('Yang anda masukkan bukan bilangan pi')
+    }
+    // const hitung = Math.floor(luasLingkaran(22 / 7, 2))  // untuk menghilangka , (angka desimal)
+    const hitung = luasLingkaran(22 / 7, 2).toFixed(2) // method fixe untuk membulatkan angka, argumen angka 2 digunaka untuk mengambil 2 angka dibelakang ,(koma) kita dpat mengubah sesuai dengan kebutuhan , jika argumen 0 maka akan membukatkan ke atas 
+    console.log('luas lingkaran :', hitung)
+
+    // 2. Menghitung luas segitiga dengan arrow function
+    const luasSegitiga = ((a, t) => {
+      return 1 / 2 * a * t;
+    })
+    console.log('luas segitiga :', luasSegitiga(4, 5));
+
+    // 3. Menghitung gaji karyawan
+    function displayNamaKaryawan() {
+      const nama = document.getElementById('namaKaryawan').value;
+      return nama;
+    }
+
+    function displayJabatan() {
+      const pilih = document.getElementById('Jabatan');
+      // gunakan event change untuk setiap memilih dropdown value,agar value berubah saat kita change, kalau menggunakan clict maka,saat kita memilih langsung keluar valuenya
+
+      // pilih.addEventListener('change', function () {
+      //   let jabatan = pilih.value;
+      //   return jabatan;
+      // })
+
+      return pilih.value;
+    }
+
+    function displayGaji() {
+      const gaji = document.getElementById('gaji').value;
+      return gaji;
+    }
+
+
+    function displayJmlHari() {
+      const jmlHari = document.getElementById('masuk-kerja').value;
+      return jmlHari
+    }
+
+    const total = document.getElementById('total')
+    total.addEventListener('click', function (e) {
+      const gajiPerhari = displayGaji();
+      const jmlHari = displayJmlHari();
+      let totalGaji = (gajiPerhari * jmlHari).toLocaleString('id-ID');
+
+      const keterangan = document.getElementById('keterangan')
+      keterangan.innerHTML = `Nama Karyawan : ${displayNamaKaryawan()} \nJabatan : ${displayJabatan()} \nGaji Perhari : ${gajiPerhari} \nJumlah Masuk Kerja : ${jmlHari} \nTotal Gaji : ${totalGaji}`
+    })
+  </script>
+</body>
+
+</html>
