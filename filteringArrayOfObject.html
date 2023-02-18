@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filterig array of object</title>
+</head>
+
+<body>
+  <script>
+    const dataMhs = [
+      {
+        name: 'Angger',
+        usia: 22,
+        alamat: 'Blitar'
+      },
+      {
+        name: 'Vindi',
+        usia: 22,
+        alamat: 'Malang'
+      }
+      , {
+        name: 'Kholis',
+        usia: 24,
+        alamat: 'Blitar'
+      }
+      , {
+        name: 'Natan',
+        usia: 26,
+        alamat: 'Surabaya'
+      }, {
+        name: 'Kafi',
+        usia: 21,
+        alamat: 'Blitar'
+      }, {
+        name: 'Dahlan',
+        usia: 25,
+        alamat: 'Blitar'
+      },
+      {
+        name: 'Susi',
+        usia: 29,
+        alamat: 'Malang'
+      },
+      {
+        name: 'Balya',
+        usia: 22,
+        alamat: 'Malang'
+      }
+    ];
+
+    // menampilkan data yang memiliki umur 20 - 25 dan urutkan nama secara ascending
+    const result = dataMhs.filter(data => data.usia > 20 && data.usia < 25)
+      .sort(nama => console.log(nama.name))
+    console.log(result)
+
+    const sorting = dataMhs.sort((a, b) => a.usia - b.usia)
+      .filter(data => data.usia > 20 && data.usia < 25)
+
+    console.log(sorting)
+  </script>
+</body>
+
+</html>

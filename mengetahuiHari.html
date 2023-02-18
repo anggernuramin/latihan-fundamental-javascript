@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menghitung hari</title>
+</head>
+
+<body>
+  <script>
+    let hari = new Date().getDay();
+    // hari direpresentasikan dengan angka 1 - 7 dimana artinya(senin - minggu)
+    switch (hari) {
+      case 1:
+        hari = 'Senin';
+        alert('Sekarang hari ' + hari)
+        break;
+      case 2:
+        hari = 'Selasa';
+        alert('Sekarang hari ' + hari)
+        break;
+      case 3:
+        hari = 'Rabu';
+        alert('Sekarang hari ' + hari)
+        break;
+      case 4:
+        hari = 'Kamis';
+        alert('Sekarang hari ' + hari)
+        break;
+      case 5:
+        hari = "Jum'at";
+        alert('Sekarang hari ' + hari)
+        break;
+      case 6:
+        hari = 'Sabtu';
+        alert('Sekarang hari ' + hari)
+        break;
+      case 7:
+        hari = 'Minggu';
+        alert('Sekarang hari ' + hari)
+        break;
+      default:
+        alert('Pengambilan hari Salah')
+    }
+    console.log(hari)
+  </script>
+</body>
+
+</html>

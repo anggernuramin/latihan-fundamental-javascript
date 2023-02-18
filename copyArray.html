@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mengcopy array agar array asli tidak berubah</title>
+</head>
+
+<body>
+  <script>
+    let nama = ['Angger', 'Nur', 'Amin'];
+    console.log(nama)
+
+    // CARA 1
+    let namaBaru = [...nama]
+    namaBaru[0] = 'Vindi';
+    console.log(typeof namaBaru);
+
+
+    // CARA 2
+    const ar = nama.slice()
+    console.log(ar[0] = 'Ani')
+
+    // CARA 3
+    for (const currentNama of nama) {
+      console.log(currentNama)
+    }
+
+    // CARA 4 
+    const name = Array.from(nama)
+    console.log(name)
+
+    // CARA 5
+
+  </script>
+</body>
+
+</html>

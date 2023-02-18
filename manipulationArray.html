@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulation data array</title>
+</head>
+
+<body>
+  <script>
+    // 1. MENACARI DATA PD ARRAY
+    // Kita bisa menggunakan method array includes() dimana jika data yg dicari ada maka aka mengembalika boolean (true) jika tdk akan (false)
+    const data = ['🍉', '🍌', '🍍', '🥭', '🍎', '🍒', '🍓']
+
+    // mencari data pisang
+    const pisang = data.includes('🍌');
+    // artinya percabngan aka berjalan jika variabel pisang bernilai true
+    if (pisang) {
+      // mencari data berada pada index ke berapa
+      const index = data.indexOf('🍌');
+      console.log(index)
+
+      // menacari data sebelum 
+      const beforeData = data[index - 1];
+      // const beforeData = data.shift() jika menggunakan method data dan akanbernilai mutlak
+      console.log(beforeData)
+
+      // mencari data sesudah
+      const afterData = data[index + 1]
+      console.log(afterData)
+      // const afterData = data.pop() jika menggunakan method array, data yg ditampilkan data mutlak(data terakhir)
+
+      // mencari data paling akhir
+      const endData = data[data.length - 1];
+      console.log(endData)
+    } else {
+      console.log('Data tidak ditemukan')
+    }
+  </script>
+</body>
+
+</html>
